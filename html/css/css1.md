@@ -78,6 +78,9 @@ L’especificitat determina quin estil s’aplica si hi ha conflictes.
 - **Classe**: Menys prioritari que id.
 - **Etiqueta**: Menys prioritari que classe.
 
+### Exercici
+Crea un html i utilitza els tres selectors explicats anteriorment (id, class o etiqueta) per assignar diferents colors.
+
 ---
 
 ## 3. El Model de Caixa (Box Model)
@@ -134,6 +137,9 @@ Defineixen com es comporten els elements a la pàgina:
   }
   ```
 
+### Exercici
+Crea un html on hi hagi tres divs, dona un color a cada div i prova els diferents displays.
+
 ---
 
 ## 5. Colors i Gradients
@@ -167,6 +173,7 @@ Defineixen com es comporten els elements a la pàgina:
 
 ### Exercici
 Crea un gradient que passi de vermell a blau.
+Crea tres paragrafs i dona un color diferent a cada un amb els tres tipus de colors (nom, RGB i hexadecimal).
 
 ---
 
@@ -200,6 +207,9 @@ body {
   letter-spacing: 2px;
   ```
 
+### Exercici
+Crea 5 paragrafs i dona diferent format de text a cada un.
+
 ---
 
 ## 7. Posicionament d’Elements
@@ -231,6 +241,9 @@ body {
     right: 0;
   }
   ```
+
+### Exercici
+Crea un html on hi hagi tres divs, prova les diferents positions.
 
 ---
 
