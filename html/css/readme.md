@@ -1,25 +1,5 @@
 # Manual per Aprendre CSS
 
-## Índex
-1. [Introducció a CSS](#1-introducci%C3%B3-a-css)
-2. [Selectors i Especificitat](#2-selectors-i-especificitat)
-3. [El Model de Caixa (Box Model)](#3-el-model-de-caixa-box-model)
-4. [Tipus de Display](#4-tipus-de-display)
-5. [Colors i Gradients](#5-colors-i-gradients)
-6. [Fonts i Tipografies](#6-fonts-i-tipografies)
-7. [Posicionament d’Elements](#7-posicionament-d-elements)
-8. [Flexbox](#8-flexbox)
-9. [CSS Grid](#9-css-grid)
-10. [Responsivitat amb Media Queries](#10-responsivitat-amb-media-queries)
-11. [Animacions i Transicions](#11-animacions-i-transicions)
-12. [Pseudoclases i Pseudoelements](#12-pseudoclases-i-pseudoelements)
-13. [Ombres i Estils 3D](#13-ombres-i-estils-3d)
-14. [Clips i Màscares](#14-clips-i-m%C3%A0scares)
-15. [Exercicis Pràctics](#15-exercicis-pr%C3%A0ctics)
-16. [Altres Funcionalitats Avançades](#16-altres-funcionalitats-avan%C3%A7ades)
-
----
-
 ## 1. Introducció a CSS
 CSS (Cascading Style Sheets) és el llenguatge utilitzat per estilitzar el contingut d’una pàgina web. Amb CSS podem definir colors, fonts, dissenys, espais, etc.
 
@@ -427,11 +407,85 @@ div {
 ### Exercici
 Defineix una variable per al color principal i utilitza-la en diversos elements.
 
-### Preprocessadors CSS
-Llenguatges com SASS o LESS amplien les funcionalitats de CSS, com ara variables, bucles i mixins.
+## 17. Ús de Colors Principals per Crear Diferents Temes amb CSS
 
-### Frameworks CSS
-Biblioteques com Bootstrap i Tailwind CSS faciliten el desenvolupament ràpid amb classes predefinides.
+CSS utilitza els colors principals per personalitzar i crear diferents temes amb un enfocament reutilitzable i coherent. Això es pot aconseguir a través de **variables CSS**, que permeten definir colors com valors reutilitzables, i després aplicar-los als elements d'una pàgina.
 
----
+### Exemple bàsic: Variables CSS per temes
+```css
+:root {
+  --primary-color: #3498db; /* Blau clar */
+  --secondary-color: #2ecc71; /* Verd clar */
+  --background-color: #f0f0f0; /* Gris clar */
+  --text-color: #333333; /* Gris fosc */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background-color: var(--secondary-color);
+}
+```
+
+### Exemple avançat: Canvi de tema amb JavaScript
+Amb CSS, es poden definir temes diferents i utilitzar JavaScript per canviar-los dinàmicament.
+
+```css
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f0f0f0;
+  --text-color: #333333;
+}
+
+[data-theme="dark"] {
+  --primary-color: #1abc9c;
+  --secondary-color: #9b59b6;
+  --background-color: #2c3e50;
+  --text-color: #ecf0f1;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+}
+```
+
+```javascript
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+});
+```
+
+```html
+<button id="themeToggle">Canvia el tema</button>
+```
+
+### Avantatges d'aquest enfocament
+- Consistència: Les variables asseguren que els colors siguin coherents a tota la pàgina.
+- Reutilització: Les variables es poden utilitzar a diversos elements, estalviant repetició.
+- Personalització: És fàcil ajustar els valors de les variables per crear temes nous o respondre a les preferències dels usuaris.
+- Interactivitat: La combinació amb JavaScript permet als usuaris canviar entre temes (ex., tema clar i fosc).
+Aquest mètode permet als desenvolupadors oferir una experiència personalitzada i estilitzada per als usuaris, mantenint el codi fàcil de gestionar.
 
