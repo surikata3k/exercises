@@ -112,17 +112,20 @@ CSS (Solució):
 6. Creació d'un degradat lineal: Crea un div amb un degradat lineal que vagi del blau al verd.
 
 HTML:
-HTML
 
+```HTML
 <div class="degradat"></div>
+```
+
 CSS (Solució):
-CSS
+```CSS
 
 .degradat {
     width: 300px;
     height: 100px;
     background: linear-gradient(to right, blue, green);
 }
+```
 ### Nivell 4: Colors en contexts més complexos
 
 7. Botó amb efecte de degradat i hover: Crea un botó amb un degradat de fons i un efecte de canvi de color en passar el ratolí per sobre.
